@@ -3,7 +3,7 @@ var blogs = [
         title: 'Health',
         date: '10/9/2025',
         description: 'A blog about health',
-        image: '../public/EGA.png',
+        image: '/public/Corpman.jpeg',
         imageAlt: 'Eagle, Globe, and Anchor',
         slug: 'blogs/health.html',
     },
@@ -11,7 +11,7 @@ var blogs = [
         title: 'Lifting',
         date: '11/9/2022',
         description: 'A blog about lifting',
-        image: '../public/OpenPowerlifting.png',
+        image: '/public/OpenPowerlifting.png',
         imageAlt: 'Open Powerlifting logo',
         slug: 'blogs/lifting.html',
     },
@@ -45,7 +45,6 @@ function appendBlogs() {
             divMain.appendChild(div);
         var hr = document.createElement('hr');
         hr.className = 'blog-breakline';
-        //div.appendChild(hr);
     });
 }
 appendBlogs();
