@@ -17,6 +17,7 @@ var blogs = [
     },
 ];
 function appendBlogs() {
+    // get div by class name
     var divMain = document.querySelector('.blog-main');
     blogs.forEach(function (blog) {
         var div = document.createElement('div');
@@ -30,6 +31,8 @@ function appendBlogs() {
         img.alt = blog.imageAlt;
         img.className = 'blog-img';
         div.appendChild(img);
+        // Append anchor to and description to description paragraph,
+        // which has the date
         var description = document.createElement('p');
         description.className = 'blog-description';
         description.textContent = blog.date;
@@ -40,11 +43,11 @@ function appendBlogs() {
         var descriptionWriting = document.createElement('p');
         descriptionWriting.textContent = blog.description;
         description.appendChild(descriptionWriting);
+        // Append to main div, which exists
+        // if statement to get rid of warning
         div.appendChild(description);
         if (divMain)
             divMain.appendChild(div);
-        var hr = document.createElement('hr');
-        hr.className = 'blog-breakline';
     });
 }
 appendBlogs();
