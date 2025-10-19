@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Resume.module.css';
 
-export default function Footer() {
+export default function Resume() {
   return (
     <div>
       <div className={style.head}>
