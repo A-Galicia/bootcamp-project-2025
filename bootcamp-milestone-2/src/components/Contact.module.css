@@ -1,0 +1,81 @@
+/* ========== Base ========== */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9fb;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  max-height: 400px;
+}
+
+a {
+  color: #00aaff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.pageTitle {
+  font-size: 2.5em;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.aboutImg {
+  height: 300px;
+  width: auto;
+}
+
+.aboutContact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ========== image ========== */
+img {
+  display: block;
+  max-width: 90%;
+  width: 900px;
+  height: auto;
+  margin: 10px auto 30px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+img:hover {
+  animation-duration: 2s;
+  animation-name: change-shadow;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes change-shadow {
+  from {
+    box-shadow: 0px 0px 0px 0px rgb(0, 0, 104);
+  }
+
+  to {
+    box-shadow: 0px 0px 100px 20px rgb(0, 0, 104);
+  }
+}
+
+@media (max-width: 450px) {
+  .aboutImage {
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+}
