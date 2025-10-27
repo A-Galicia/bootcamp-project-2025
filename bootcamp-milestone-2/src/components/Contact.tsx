@@ -1,27 +1,32 @@
 import React from 'react';
 import style from './Contact.module.css';
+import Image from 'next/image';
 
 export default function Contact() {
   return (
     <div>
       <h1 className={style.pageTitle}>Contact</h1>
       <div className={style.aboutContact}>
-        <img
-          className={style.aboutImg}
-          src='../public/Gmail.png'
+        <Image
+          src='/Gmail.png'
           alt='Gmail logo'
+          width={500}
+          height={500}
+          className={style.aboutImg}
         />
-        <p className='about-gmail'>alfgalic@gmail.com</p>
+        <p className={style.aboutGmail}>alfgalic@gmail.com</p>
 
         <a
           href='https://github.com/A-Galicia'
           target='_blank'
           rel='noopener noreferrer'
         >
-          <img
-            className={style.aboutImg}
-            src='../public/LinkedIn.png'
+          <Image
+            src='/LinkedIn.png'
             alt='LinkedIn logo'
+            width={500}
+            height={500}
+            className={style.aboutImg}
           />
         </a>
 
@@ -30,10 +35,12 @@ export default function Contact() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <img
-            className={style.aboutImg}
-            src='../public/GitHub.png'
+          <Image
+            src='/GitHub.png'
             alt='GitHub logo'
+            width={500}
+            height={500}
+            className={style.aboutImg}
           />
         </a>
       </div>
