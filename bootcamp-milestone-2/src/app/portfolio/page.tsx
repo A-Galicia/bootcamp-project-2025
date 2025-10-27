@@ -1,9 +1,9 @@
-import Home from '@/components/Home';
+import Portfolio from '@/components/Portfolio';
 
 export default function Index() {
   return (
     <div>
-      <Home />
+      <Portfolio />
     </div>
   );
 }

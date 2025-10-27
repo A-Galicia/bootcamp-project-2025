@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './Portfolio.module.css';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -11,9 +12,12 @@ export default function Footer() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <img
-            src='../public/StrengthProjector.png'
+          <Image
+            src='/StrengthProjector.png'
             alt='Home page of my Strength Projector web application'
+            width={500}
+            height={500}
+            className={style.img}
           />
         </a>
       </div>
@@ -25,9 +29,12 @@ export default function Footer() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <img
-            src='../public/AsteroidsScreenShot.png'
+          <Image
+            src='/AsteroidsScreenShot.png'
             alt='In-game image of my rendition of the Asteroids arcade game'
+            width={500}
+            height={500}
+            className={style.img}
           />
         </a>
       </div>
@@ -39,9 +46,12 @@ export default function Footer() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <img
-            src='public/GithubScrn.png'
+          <Image
+            src='/GithubScrn.png'
             alt='Home page of my GitHub profile'
+            width={500}
+            height={500}
+            className={style.img}
           />
         </a>
       </div>
