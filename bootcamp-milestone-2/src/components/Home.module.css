@@ -1,26 +1,15 @@
-/* ========== Base ========== */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f9f9fb;
-  color: #333;
-  line-height: 1.6;
-  min-height: 100vh;
-}
-
-h1,
-h2,
-h3 {
+.h1,
+.h2,
+.h3 {
   margin-top: 0;
   max-height: 400px;
 }
 
-a {
+.a {
   color: #00aaff;
   text-decoration: none;
 }
-a:hover {
+.a:hover {
   text-decoration: underline;
 }
 
@@ -32,7 +21,7 @@ a:hover {
 }
 
 /* ========== Layout ========== */
-main {
+.main {
   width: 90%;
   max-width: 900px;
   margin: 0 auto;
@@ -65,6 +54,7 @@ main {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin: 0 auto 24px;
+  max-width: 70%;
 }
 
 .aboutText p {
@@ -89,10 +79,10 @@ main {
 }
 
 /* ========== image ========== */
-img {
+.img {
   display: block;
   max-width: 90%;
-  width: 900px;
+  width: 400px;
   height: auto;
   margin: 10px auto 30px;
   background: #fff;
@@ -100,7 +90,7 @@ img {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-img:hover {
+.img:hover {
   animation-duration: 2s;
   animation-name: change-shadow;
   animation-iteration-count: 1;

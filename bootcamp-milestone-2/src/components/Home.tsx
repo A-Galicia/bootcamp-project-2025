@@ -1,7 +1,8 @@
 import React from 'react';
 import style from './Home.module.css';
+import Image from 'next/image';
 
-export default function Footer() {
+export default function Home() {
   return (
     <div>
       <h1 className={style.pageTitle}>About Me!</h1>
@@ -12,7 +13,13 @@ export default function Footer() {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <img src='../public/EGA.png' alt='Eagle, Globe, and Anchor' />
+            <Image
+              src='/EGA.png'
+              alt='Eagle, Globe, and Anchor'
+              width={500}
+              height={500}
+              className={style.img}
+            ></Image>
           </a>
         </div>
         <div className={style.aboutText}>
@@ -33,10 +40,13 @@ export default function Footer() {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <img
-              src='../public/OpenPowerlifting.png'
+            <Image
+              src='/OpenPowerlifting.png'
               alt='Open Powerlifting logo'
-            />
+              width={500}
+              height={500}
+              className={style.img}
+            ></Image>
           </a>
         </div>
         <div className={style.aboutText}>
