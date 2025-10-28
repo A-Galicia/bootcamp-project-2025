@@ -16,7 +16,13 @@ export default function BlogPreview({
       <h3> {title} </h3>
       <div>
         <a href={slug}>
-          <Image src={image} alt={imageAlt} width={300} height={300}></Image>
+          <Image
+            src={image}
+            alt={imageAlt}
+            width={300}
+            height={300}
+            className={style.img}
+          />
         </a>
         <div>
           <p className={style.description}>
