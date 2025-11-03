@@ -26,7 +26,7 @@ export default function BlogPreview({
         </a>
         <div>
           <p className={style.description}>
-            Posted on: {date}
+            Posted on: {date.toDateString()}
             <br></br>
             {description}
           </p>
