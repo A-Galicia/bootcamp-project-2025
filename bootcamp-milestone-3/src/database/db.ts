@@ -13,6 +13,8 @@ const connectDB = async () => {
     connection = await mongoose.connect(url);
     return connection;
   }
+  // if we already have a connection, return it for callers that expect a value
+  return connection;
 };
 
 export default connectDB;

@@ -9,7 +9,7 @@ type Blog = {
   content: string; // text content for individual blog page
   image: string; // url for string in public
   imageAlt: string; // alt for image
-  comments: Comment[]; // array for comments
+  comments: string[]; // array for comments
 };
 
 // mongoose schema
