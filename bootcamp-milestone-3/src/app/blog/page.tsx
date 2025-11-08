@@ -1,4 +1,3 @@
-import styles from './page.module.css';
 import BlogPreview from '@/components/BlogPreview';
 import connectDB from '@/database/db';
 import Blog from '@/database/blogSchema';
@@ -13,6 +12,7 @@ export default async function BlogPage() {
       // send a response as the blogs as the message
       return blogsArr;
     } catch (err) {
+      console.error('Error fetching blogs:', err);
       return null;
     }
   }

@@ -1,9 +1,6 @@
 import connectDB from '@/database/db';
-import blogSchema from '@/database/blogSchema';
 import Blog from '@/database/blogSchema';
 import style from '@/components/BlogPreview.module.css';
-
-//type PageProps = { params: { slug: string } };
 
 type IParams = {
   params: {
