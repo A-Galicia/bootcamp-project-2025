@@ -2,16 +2,33 @@ import connectDB from '@/database/db';
 import blogSchema from '@/database/blogSchema';
 import Blog from '@/database/blogSchema';
 import style from '@/components/BlogPreview.module.css';
-import Image from 'next/image';
 
-type PageProps = { params: { slug: string } };
+//type PageProps = { params: { slug: string } };
 
-export default async function BlogPage({ params }: PageProps) {
+type IParams = {
+  params: {
+    slug: string;
+  };
+};
+
+export default async function BlogPage({ params }: IParams) {
   await connectDB();
-  const slug = "blogs/" + await params.slug;
-  const post = await Blog.findOne({ slug: slug }).orFail();
+  const { slug } = await params;
 
-  if (!post) return <p>Nothing Here...</p>;
+  // DB slug format is blogs/slug-value
+  const fullSlug = 'blogs/' + slug;
+
+  let post: Blog = {} as Blog;
+  try {
+    post = await Blog.findOne({ slug: fullSlug }).orFail();
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      console.log(err.message);
+      return <p>Nothing Here...</p>;
+    } else {
+      console.error('An unknown error occurred:', err);
+    }
+  }
 
   return (
     <div className={style.div}>
@@ -24,7 +41,7 @@ export default async function BlogPage({ params }: PageProps) {
       <div>Comments:</div>
       {!post.comments
         ? null
-        : post.comments.map((comment) => {
+        : post.comments.map((comment: string) => {
             return (
               <p key={comment} className={style.comment}>
                 {comment}
