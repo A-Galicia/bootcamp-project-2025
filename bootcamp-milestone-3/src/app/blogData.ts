@@ -5,6 +5,8 @@ export interface Blog {
   image: string;
   imageAlt: string;
   slug: string;
+  content?: string;
+  comments?: string[];
 }
 
 const blogs: Blog[] = [
