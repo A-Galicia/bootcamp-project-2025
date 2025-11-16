@@ -1,6 +1,12 @@
 import mongoose, { Schema } from 'mongoose';
 
 // typescript type (can also be an interface)
+type IComment = {
+  username: string;
+  comment: string;
+  date: Date;
+};
+
 type Blog = {
   title: string;
   slug: string;
@@ -9,8 +15,17 @@ type Blog = {
   content: string; // text content for individual blog page
   image: string; // url for string in public
   imageAlt: string; // alt for image
-  comments: string[]; // array for comments
+  comments: IComment[]; // array for comments
 };
+
+const commentSchema = new Schema<IComment>(
+  {
+    username: { type: String, required: true, trim: true },
+    comment: { type: String, required: true, trim: true },
+    date: { type: Date, default: Date.now },
+  },
+  { _id: false } // comments are embedded, don't need their own _id
+);
 
 // mongoose schema
 const blogSchema = new Schema<Blog>({
@@ -21,7 +36,7 @@ const blogSchema = new Schema<Blog>({
   image: { type: String, required: true },
   imageAlt: { type: String, required: true },
   content: { type: String, required: true },
-  comments: [{ type: String, required: true }],
+  comments: { type: [commentSchema], default: [] },
 });
 
 // defining the collection and model

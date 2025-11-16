@@ -1,6 +1,7 @@
 import connectDB from '@/database/db';
 import Blog from '@/database/blogSchema';
 import style from '@/components/BlogPreview.module.css';
+import Comment from '@/components/Comment';
 
 type Props = {
   params: { slug: string };
@@ -35,11 +36,14 @@ export default async function BlogPage({params: { slug }}: Props) {
       <div>Comments:</div>
       {!post.comments
         ? null
-        : post.comments.map((comment: string) => {
+        : post.comments.map((comment, index) => {
             return (
-              <p key={comment} className={style.comment}>
-                {comment}
-              </p>
+              <Comment
+                key={index}
+                username={comment.username}
+                date={comment.date}
+                content={comment.comment}
+              />
             );
           })}
     </div>
