@@ -1,7 +1,5 @@
 import React from 'react';
-import style from './BlogPreview.module.css';
-import Image from 'next/image';
-import { Blog } from '@/app/blogData';
+import style from './Comment.module.css';
 
 type CommentProps = {
   username: string;
@@ -15,10 +13,10 @@ export default function Comment({
   content,  
 }: CommentProps) {
   return (
-    <div>
-      <h4>{username}</h4>
-      <p>{content}</p>
-      <span>{new Date(date).toDateString()}</span>
+    <div className={style.comment}>
+      <h4 className={style.h4}>{username}: &nbsp;</h4>
+      <span className={style.span}>{new Date(date).toDateString()}</span>
+      <p className={style.p}>{content}</p>
     </div>
   );
 }
