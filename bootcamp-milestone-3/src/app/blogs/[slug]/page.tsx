@@ -2,15 +2,12 @@ import connectDB from '@/database/db';
 import Blog from '@/database/blogSchema';
 import style from '@/components/BlogPreview.module.css';
 
-type IParams = {
-  params: {
-    slug: string;
-  };
+type Props = {
+  params: { slug: string };
 };
 
-export default async function BlogPage({ params }: IParams) {
+export default async function BlogPage({params: { slug }}: Props) {
   await connectDB();
-  const { slug } = await params;
 
   // DB slug format is blogs/slug-value
   const fullSlug = 'blogs/' + slug;

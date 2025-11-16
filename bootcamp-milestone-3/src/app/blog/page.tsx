@@ -26,7 +26,6 @@ export default async function BlogPage() {
   }
 
   const blogs = await getBlogs();
-
   if (!blogs) {
     return (
       <Suspense fallback={<p style={centerStyle}>Loading blog posts...</p>}>
