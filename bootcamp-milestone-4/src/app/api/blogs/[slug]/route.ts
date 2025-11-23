@@ -43,9 +43,11 @@ export async function GET(req: NextRequest, { params }: IParams) {
 
   await connectDB(); // function from db.ts before
   const { slug } = params; // another destructure
+  
+  const fullSlug = 'blogs/' + slug; // DB slug format is blogs/slug-value
 
   try {
-    const blog = await blogSchema.findOne({ slug }).orFail();
+    const blog = await blogSchema.findOne({ slug: fullSlug }).orFail();
     return NextResponse.json(blog);
   } catch (err) {
     console.error('Error fetching blog by slug:', err);
